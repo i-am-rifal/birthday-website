@@ -140,7 +140,7 @@
         <div class="candle">🕯️</div>
       </div>
     </div>
-    <p>tekan tombol ee pii</p>
+    <p>tekan tombol lanjut pii, sekalian play music ee hehe</p>
     <div class="button-audio-container">
       <button onclick="showSection2()">Lanjut</button>
       <!-- Pemutar lagu ditempatkan di bawah tombol dengan jarak 30px -->
@@ -164,7 +164,7 @@
     <button onclick="showSection3()">Lanjut</button>
   </div>
   
-  <!-- Section 3: Pesan akhir beserta efek balon tambahan -->
+  <!-- Section 3: Pesan akhir beserta efek balon tambahan dan tombol Keluar -->
   <div id="section3" class="fade-in" style="display: none;">
     <p>
       maaf kalo ucapan ni tak terlalu bagus hehe soal ee betul betul masih belajar buat eee dan tak mahir pakai aplikasi eee.  
@@ -177,6 +177,8 @@
       <span class="balloon" style="animation-delay: 0.5s;">🎈</span>
       <span class="balloon" style="animation-delay: 1s;">🎈</span>
     </div>
+    <!-- Tombol Keluar -->
+    <button onclick="exitWebsite()">Keluar</button>
   </div>
   
   <script>
@@ -187,6 +189,13 @@
     function showSection3() {
       document.getElementById('section2').style.display = 'none';
       document.getElementById('section3').style.display = 'block';
+    }
+    function exitWebsite() {
+      // Metode yang lebih andal: arahkan pengguna ke halaman kosong
+      window.location.href = "about:blank";
+      // Jika Anda ingin mencoba menutup jendela (mungkin tidak selalu berhasil):
+      // window.open('', '_self', '');
+      // window.close();
     }
   </script>
 </body>

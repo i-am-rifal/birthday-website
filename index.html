@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Ulang Tahun</title>
+  <style>
+    /* Atur latar belakang pink dan posisi konten secara keseluruhan */
+    body {
+      background-color: #FFC0CB;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #4B0082;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    /* Setiap section memiliki lebar maksimal dan teks center */
+    #section1, #section2, #section3 {
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    /* Efek fade-in */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    /* Container untuk tombol dan audio di Section 1 */
+    .button-audio-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px; /* jarak antara tombol dan audio */
+    }
+    
+    /* Styling untuk animasi balon */
+    .balloon-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .balloon {
+      display: inline-block;
+      font-size: 2rem;
+      margin: 0 10px;
+      animation: balloonFly 3s ease-in-out infinite;
+    }
+    @keyframes balloonFly {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(10px, -30px); }
+      100% { transform: translate(0, 0); }
+    }
+    
+    /* Animasi kue ulang tahun */
+    #cake-container {
+      animation: slideUp 2s ease-out forwards;
+      animation-delay: 1s;
+      margin: 20px 0;
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .cake {
+      font-size: 5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .candle {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+    }
+    
+    /* Container gambar di Section 2 dengan tinggi tetap */
+    .img-container {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px; /* tinggi tetap */
+      overflow: hidden;
+    }
+    .img-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Section 1: Salam awal dengan balon, kue, tombol, dan audio -->
+  <div id="section1" class="fade-in">
+    <h1>Silpii, It's ur birthday !!! :)</h1>
+    <div class="balloon-container">
+      <span class="balloon" style="animation-delay: 0s;">🎈</span>
+      <span class="balloon" style="animation-delay: 0.5s;">🎈</span>
+      <span class="balloon" style="animation-delay: 1s;">🎈</span>
+      <span class="balloon" style="animation-delay: 1.5s;">🎈</span>
+    </div>
+    <div id="cake-container">
+      <div class="cake">
+        🍰
+        <div class="candle">🕯️</div>
+      </div>
+    </div>
+    <p>tekan tombol ee pii</p>
+    <div class="button-audio-container">
+      <button onclick="showSection2()">Lanjut</button>
+      <!-- Pemutar lagu ditempatkan di bawah tombol dengan jarak 30px -->
+      <audio autoplay controls style="margin-top:20px;">
+        <source src="assets/lagu-ultah.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung pemutaran audio.
+      </audio>
+    </div>
+  </div>
+  
+  <!-- Section 2: Ucapan dan foto -->
+  <div id="section2" class="fade-in" style="display: none;">
+    <h1>Selamat ulang tahunn silpii !!!</h1>
+    <p>
+      Semoga kau sehat selalu pi, semoga dilancarkan rezeki dan bahagia selaluu.  
+      Ape urusan yang kau hadapi semoga dimudahkan dan tak lupee beribadah tuu.  
+      Lancar lancar kuliah ee yee pi semoga dilancarkan.
+    </p>
+    <div class="img-container">
+      <img src="assets/foto-silpi.jpg" alt="Foto Ulang Tahun">
+    </div>
+    <button onclick="showSection3()">Lanjut</button>
+  </div>
+  
+  <!-- Section 3: Pesan akhir beserta efek balon tambahan -->
+  <div id="section3" class="fade-in" style="display: none;">
+    <p>
+      maaf kalo ucapan ni tak terlalu bagus hehe soal ee betul betul masih belajar buat eee dan tak mahir pakai aplikasi eee.  
+      Pokok ee yang di semogakan tersemogakan pi.  
+      Sorry yee pi kalo annoying wkwk sorry juge untuk yg sebelum sebelum eee.  
+      Enjoy ur birthday piww !!!
+    </p>
+    <div class="balloon-container">
+      <span class="balloon" style="animation-delay: 0s;">🎈</span>
+      <span class="balloon" style="animation-delay: 0.5s;">🎈</span>
+      <span class="balloon" style="animation-delay: 1s;">🎈</span>
+    </div>
+  </div>
+  
+  <script>
+    function showSection2() {
+      document.getElementById('section1').style.display = 'none';
+      document.getElementById('section2').style.display = 'block';
+    }
+    function showSection3() {
+      document.getElementById('section2').style.display = 'none';
+      document.getElementById('section3').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
